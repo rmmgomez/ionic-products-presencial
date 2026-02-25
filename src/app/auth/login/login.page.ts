@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AlertController, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonList, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { Auth } from '../services/auth';
-
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -18,13 +18,13 @@ export class LoginPage {
 
   #authService = inject(Auth);
   #alertCtrl = inject(AlertController);
-  // #navCtrl = inject(NavController);
+  #navCtrl = inject(NavController);
 
   login() {
     this.#authService
       .login(this.email, this.password)
       .subscribe({
-        // next: () => this.#navCtrl.navigateRoot(['/products']),
+        next: () => this.#navCtrl.navigateRoot(['/products']),
         error: async (error) => {
           (
             await this.#alertCtrl.create({
