@@ -22,7 +22,7 @@ export class AppComponent {
   userResource = this.#authService.getProfile();
   user = computed(() => this.userResource.hasValue() ? this.userResource.value().user : null);
 
-  public appPages = [{ title: 'Home', url: '/products', icon: 'home' }];
+  public appPages = [{ title: 'Home', url: '/products', icon: 'home' },{ title: 'Add product', url: '/products/add', icon: 'add' }];
   constructor() {
     addIcons({ home, logIn, documentText, checkmarkCircle, images, camera, arrowUndoCircle, add, menu, trash, eye, close, exit });
 

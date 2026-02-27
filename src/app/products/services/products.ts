@@ -1,7 +1,7 @@
 import { HttpClient, httpResource } from '@angular/common/http';
 import { computed, inject, Injectable, Signal } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Product } from '../interfaces/product';
+import { Product, ProductInsert } from '../interfaces/product';
 import { Comment } from '../interfaces/comment';
 import {
   ProductsResponse,
@@ -33,7 +33,7 @@ export class Products {
     return httpResource<ProductsResponse>(() => `products?${queryParams()}`);
   }
 
-  addProduct(prod: Product): Observable<Product> {
+  addProduct(prod: ProductInsert): Observable<Product> {
     return this.#http
       .post<SingleProductResponse>('products', prod)
       .pipe(map((resp) => resp.product));
