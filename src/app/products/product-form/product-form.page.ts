@@ -117,7 +117,7 @@ export class ProductFormPage {
       source: CameraSource.Photos,
       height: 640,
       width: 640,
-      // allowEditing: true,
+      //allowEditing: true,
       resultType: CameraResultType.DataUrl, // Base64 (url encoded)
     });
 
