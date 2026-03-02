@@ -15,4 +15,13 @@ export const productsRoutes: Routes = [
         (m) => m.ProductFormPage
       ),
   },
+  {
+    path: ':id',
+    loadComponent: () =>
+      import('./product-detail/product-detail.page').then(
+        (m) => m.ProductDetailPage
+      ),
+    loadChildren: () => // Rutas internas (dentro de product-detail)
+      import('./product-detail/product-detail.routes').then((m) => m.productDetailRoutes),
+  },
 ];

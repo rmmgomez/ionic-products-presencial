@@ -4,7 +4,7 @@ import { SplashScreen } from '@capacitor/splash-screen';
 import { Platform, IonApp, IonContent, IonIcon, IonItem, IonLabel, IonList, IonMenu, IonMenuToggle, IonRouterLink, IonRouterOutlet, IonSplitPane, IonAvatar, IonImg } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { User } from './auth/interfaces/user';
-import { home, logIn, documentText, checkmarkCircle, images, camera, arrowUndoCircle, menu, add, trash, eye, close, exit } from 'ionicons/icons';
+import { home, logIn, documentText, checkmarkCircle, images, camera, arrowUndoCircle, menu, add, trash, eye, close, exit, chatboxEllipses, informationCircle } from 'ionicons/icons';
 import { Auth } from './auth/services/auth';
 import { NavController } from '@ionic/angular';
 
@@ -24,7 +24,7 @@ export class AppComponent {
 
   public appPages = [{ title: 'Home', url: '/products', icon: 'home' },{ title: 'Add product', url: '/products/add', icon: 'add' }];
   constructor() {
-    addIcons({ home, logIn, documentText, checkmarkCircle, images, camera, arrowUndoCircle, add, menu, trash, eye, close, exit });
+    addIcons({ home, logIn, documentText, checkmarkCircle, images, camera, arrowUndoCircle, add, menu, trash, eye, close, exit, informationCircle, chatboxEllipses });
 
     this.initializeApp();
   }

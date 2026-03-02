@@ -6,7 +6,18 @@ const config: CapacitorConfig = {
   webDir: 'www',
   android: {
     allowMixedContent: true
-  }
+  },
+  plugins: {
+    StatusBar: {
+      overlaysWebView: false,
+      style: "DARK",
+      backgroundColor: "#0054e9",
+    },
+    SystemBars: {
+      /* Para Android 16+ */
+      "insetsHandling": "disable"
+    }
+  },
 };
 
 export default config;
